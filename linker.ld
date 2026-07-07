@@ -1,7 +1,7 @@
 
 ENTRY(_start)
 
-PAGE_SIZE = 4096; /* 4KiB */
+PAGE_SIZE = 4K;
 
 SECTIONS {
 	. = 2M;
