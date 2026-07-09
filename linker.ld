@@ -4,7 +4,7 @@ ENTRY(_start)
 PAGE_SIZE = 4K;
 
 SECTIONS {
-	. = 2M;
+	. = 0xC0000000 + 2M;
 
 	_kernel_start = .;
 
