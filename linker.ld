@@ -4,9 +4,9 @@ ENTRY(_start)
 PAGE_SIZE = 4K;
 
 SECTIONS {
-	. = 0xC0000000 + 2M;
+	_kernel_start = 2M;
 
-	_kernel_start = .;
+	. = 0xC0000000 + _kernel_start;
 
 	.text	: ALIGN(PAGE_SIZE) {
 		*(.multiboot)
