@@ -6,10 +6,15 @@ PAGE_SIZE = 4K;
 SECTIONS {
 	_kernel_start = 2M;
 
-	. = 0xC0000000 + _kernel_start;
+	. = _kernel_start;
+
+	.boot	: ALIGN(PAGE_SIZE) {
+		*(.multiboot)
+	}
+
+	. += 0xC0000000;
 
 	.text	: ALIGN(PAGE_SIZE) {
-		*(.multiboot)
 		*(.text)
 	}
 
