@@ -8,7 +8,7 @@ SECTIONS {
 
 	. = _kernel_start;
 
-	.boot	: ALIGN(PAGE_SIZE) {
+	.multiboot : {
 		*(.multiboot)
 	}
 
