@@ -14,19 +14,19 @@ SECTIONS {
 
 	. += 0xC0000000;
 
-	.text	: ALIGN(PAGE_SIZE) {
+	.text ALIGN(PAGE_SIZE) : AT(ADDR(.text) - 0xC0000000) {
 		*(.text)
 	}
 
-	.rodata	: ALIGN(PAGE_SIZE) {
+	.rodata	ALIGN(PAGE_SIZE) : AT(ADDR(.rodata) - 0xC0000000) {
 		*(.rodata)
 	}
 
-	.data	: ALIGN(PAGE_SIZE) {
+	.data ALIGN(PAGE_SIZE) : AT(ADDR(.data) - 0xC0000000) {
 		*(.data)
 	}
     
-	.bss	: ALIGN(PAGE_SIZE) {
+	.bss ALIGN(PAGE_SIZE) : AT(ADDR(.bss) - 0xC0000000) {
 		*(COMMON)
 		*(.bss)
 	}
